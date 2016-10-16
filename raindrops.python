@@ -87,10 +87,10 @@ def player_dry(raindrops, player_position):
 
 # Game over (player was wet)
 def game_over(dry_time):
+    score = str(int((microbit.running_time() - dry_time) / 1000))
     while True:
         display.show(Image.SAD)
         sleep(2000)
-        score = str(int((microbit.running_time() - dry_time) / 1000))
         display.scroll("Score: " + score)
     return;
 
